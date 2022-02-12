@@ -1,39 +1,21 @@
-/* configure access to our .env */
-require("dotenv").config();
-
-/* include express.js & socket.io, plus other packages */
-const express = require("express");
+const express = require('express');
 const app = express();
-const http = require("http").createServer(app);
-const io = require("socket.io")(http);
-const open = require("open");
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
 
-function runChat() {
-  /* serve our /public folder, which includes our frontend html */
-  app.use(express.static("public"));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
-  /* serve the app at a random port location */
-  http.listen(0, function() {
-    const randomInstancePort = http.address().port;
-    open("http://localhost:" + randomInstancePort);
-  });
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('message', (msg) => {
+    console.log("message "+ msg)
+  })
+});
 
-  /* when a new socket.io client connects to this server */
-  io.on("connection", function(client) {
-
-    /* send messages when new clients connect */
-    io.emit("connect message", client.id);
-    
-    /* send chat messages to all listening clients */
-    client.on("chat message", function(msg) {
-      io.emit("chat message", msg);
-    });
-    
-    /* send messages when new clients disconnect */
-    client.on("disconnect", function() {
-      io.emit("disconnect message", client.id);
-    });
-  });
-}
-
-runChat();
+server.listen(3000, () => {
+  console.log('listening on *:3000');
+});
