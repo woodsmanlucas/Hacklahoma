@@ -8,6 +8,7 @@
 
 - React Js: For frontend
 - Hedera: For smart contract
+    * https://hedera.com/blog/build-your-first-hcs-powered-web-app
 - Firebase: For user authentication
 - Three.js: For 3D rendering
 - echo3D: For Augmented Reality
