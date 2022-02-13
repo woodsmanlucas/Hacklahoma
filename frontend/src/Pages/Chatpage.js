@@ -1,17 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import io from 'socket.io-client';
-import { FormControl, TextField,  Button, Container, Paper } from '@mui/material';
-
+import { TextField, Box, Button, Container, Paper } from '@mui/material';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Chatpage() {
     const [message, setMessage] = useState("")
     const [socket, setSocket] = useState(null);
+    const [messages, setMessages] = useState([]);
+    const [UserId] = useState(uuidv4)
 
     useEffect(() => {
-      const newSocket = io(`http://${window.location.hostname}:3000`);
+      const newSocket = io(`http://${window.location.hostname}:5000`);
       setSocket(newSocket);
+      newSocket.on("messages", data => {
+          setMessages(data)          
+      })
       return () => newSocket.close();
-    }, [setSocket]);
+    }, []);
 
     function handleChange(e) {
         setMessage(e.target.value)
@@ -19,36 +24,18 @@ export default function Chatpage() {
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log("jaja")
-        socket.emit('message', message)
+        if(socket){
+        socket.emit('message', {id: uuidv4(), "user": UserId, "time": Date.now(), "msg": message})
         setMessage("")
+        }
     }
 
   return (
-    <Container sx={{display: "flex", flexDirection: "column", flexWrap: "nowrap", height: "100%"}}>
-                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>
-                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>                <h1>height</h1>
-                <Paper sx ={{ml: "auto"}}>
-                <h1>hello</h1>
-                </Paper>
+    <Container maxWidth="sm" sx={{display: "flex", flexDirection: "column", flexWrap: "nowrap", height: "100%"}}>
+            <Paper sx={{height: "90vh" }}>{messages.map((msg) => (UserId == msg.user) ? 
+                    <Box sx={{color: "white", backgroundColor: "tomato", overflowWrap: "break-word", width: "max-content", height: "20px", p: "5px", borderRadius: "5px"}} key={msg.id}>{msg.msg}</Box> : 
+                    <Box sx={{color: "white", backgroundColor: "olivedrab",overflowWrap: "break-word", width: "max-content", height: "20px", p: "5px", borderRadius: "5px", ml: "auto"}} key={msg.id}>{msg.msg}</Box>)}
+            </Paper>
             <Paper sx={{display: "flex", flexDirection: "row"}} onSubmit={handleSubmit}>
             <TextField sx={{width: "80%"}} id="outlined-basic" label="Enter a message" variant="outlined" type="text" value={message} onChange={handleChange} />
             <Button sx={{width: "20%"}} onClick={handleSubmit} >Submit</Button>
