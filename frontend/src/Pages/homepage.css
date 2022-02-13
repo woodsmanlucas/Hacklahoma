@@ -1,0 +1,6 @@
+@media only screen and (max-width: 420px) {
+    .mediaflex{
+      display:flex; 
+      flex-direction: column
+    }
+  }

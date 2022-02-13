@@ -1,14 +1,29 @@
 import React from 'react'
 import HomepageCard from '../components/HompageCard';
 import { Container, Paper } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
+import MobileCard from '../components/MobileCard';
 //import HompageContainer from '../components/HompageContainer';
 
+const Hompageview = () =>{
+  const isActive = useMediaQuery('(max-width: 1000px)')
+  if (isActive){
+    return <MobileCard />
+  }else{
+    return <HomepageCard />
+  }
+
+} 
+
+
 export default function Homepage() {
+  
   return (
     <div>
         <Container>
-        <Paper sx={{display:'flex', flexDirection:'row', marginTop:'5%'}}>
-        <HomepageCard />
+        <Paper sx={{marginTop:'5%'}}>
+        <Hompageview />
+        
         </Paper>  
         </Container>
     </div>

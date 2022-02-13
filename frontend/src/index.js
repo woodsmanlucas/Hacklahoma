@@ -1,3 +1,4 @@
+import React from 'react';
 import {render} from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -7,7 +8,7 @@ Route
 } from "react-router-dom";
 import Chatpage from './Pages/Chatpage';
 import Homepage from './Pages/Homepage';
-import Welcome from './Pages/WelcomePage'
+import Welcome from './Pages/WelcomePage';
 
 
 render(

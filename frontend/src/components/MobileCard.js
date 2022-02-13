@@ -12,30 +12,18 @@ import "./homepage.css"
 
 
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
-
-export default function HomepageCard() {
-  
+export default function MobileCard() {
   return (
-    
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        <Paper sx={{display: "flex"}}>
-        <Paper>
+    <Card>
+        <CardContent>
+        <Paper sx={{display: "flex", flexDirection:'column'}}>
+        <Paper  >
         <Typography variant="h5" component="div" color="text.secondary" gutterBottom>
           Hacklahoma Team
         </Typography>
         
         <Typography variant="body2">
-        <Paper sx={{ width: '50%', padding:'2%'}}>
+        <Paper sx={{ width: '100%', padding:'2%'}}>
         Lorem ipsum dolor sit amet, adhuc homero scribentur his id, ad sint animal vix. 
         Quas ridens eum eu, no vide legimus usu. Ea natum reque animal qui. His ex virtute appareat 
         pertinacia. Has facilisis dissentiunt id, id labores invenire iudicabit eum. 
@@ -46,7 +34,7 @@ export default function HomepageCard() {
         </Paper>
         </Typography>
         </Paper>
-        <img src={Solar} alt="Solar system" />
+        <img src={Solar} alt="Solar system"  />
         </Paper>
  
       </CardContent>
@@ -62,6 +50,5 @@ export default function HomepageCard() {
         </Paper>
       </CardActions>
     </Card>
-
-  );
+  )
 }
