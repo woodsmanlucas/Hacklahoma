@@ -9,6 +9,7 @@ Route
 import Chatpage from './Pages/Chatpage';
 import Homepage from './Pages/Homepage';
 import Welcome from './Pages/WelcomePage';
+import AboutPage from './Pages/AboutPage';
 
 
 render(
@@ -17,6 +18,7 @@ render(
     <Route path="/" element={<Homepage />} />
     <Route path="chat" element={<Chatpage/>} />
     <Route path="welcome" element={<Welcome />} />
+    <Route path="about" element={<AboutPage />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')
