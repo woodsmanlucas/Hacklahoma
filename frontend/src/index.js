@@ -7,6 +7,7 @@ Route
 } from "react-router-dom";
 import Chatpage from './Pages/Chatpage';
 import Homepage from './Pages/Homepage';
+import Welcome from './Pages/WelcomePage'
 
 
 render(
@@ -14,6 +15,7 @@ render(
     <Routes>
     <Route path="/" element={<Homepage />} />
     <Route path="chat" element={<Chatpage/>} />
+    <Route path="welcome" element={<Welcome />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

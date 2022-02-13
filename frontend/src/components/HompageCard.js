@@ -51,9 +51,9 @@ export default function HomepageCard() {
         <Paper sx={{display:'flex', flexDirection:'column', marginTop:'30%', position: 'relative', mx: "auto" }}>
         
         <Box component="span" sx={{ p: 7, border: '5px grey' }}>
-        <Button variant="contained" color="success" sx={{width: "100%"}}>Login with google</Button>
+        <Button variant="contained" color="success" sx={{width: "100%"}} href="/Welcome">Login with google</Button>
         <Paper sx={{ margin:'5%'}}></Paper>
-        <Button variant="contained"  sx={{width: "100%"}}>Log in with metamask</Button>
+        <Button variant="contained"  sx={{width: "100%"}} href="/Welcome">Log in with metamask</Button>
         </Box>
         </Paper>
       </CardActions>
