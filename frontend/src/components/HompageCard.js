@@ -9,6 +9,8 @@ import { Paper } from '@mui/material';
 
 
 
+
+
 const bull = (
   <Box
     component="span"
@@ -20,13 +22,15 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Paper sx={{ width: '50%'}}>
+    
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div" color="text.secondary" gutterBottom>
-          Word of the Day
+          Hacklahoma Team
         </Typography>
+        
         <Typography variant="body2">
+        <Paper sx={{ width: '50%', padding:'2%'}}>
         Lorem ipsum dolor sit amet, adhuc homero scribentur his id, ad sint animal vix. 
         Quas ridens eum eu, no vide legimus usu. Ea natum reque animal qui. His ex virtute appareat 
         pertinacia. Has facilisis dissentiunt id, id labores invenire iudicabit eum. 
@@ -34,12 +38,23 @@ export default function BasicCard() {
         Sed te doctus commune accumsan, euripidis constituam ne pro. Ludus mandamus eum no, soluta 
         mnesarchum an pro. Ad labore timeam principes vis, eos ad augue delicata signiferumque. 
         Ea eum luptatum adolescens. Eu eos duis tota volumus, no qui doming virtute 
+        </Paper>
         </Typography>
+
+ 
       </CardContent>
+
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Paper sx={{display:'flex', flexDirection:'column', marginTop:'30%', position: 'relative', left: '40%', }}>
+        
+        <Box component="span" sx={{ p: 7, border: '5px grey' }}>
+        <Button variant="contained" color="success" sx={{width: "100%"}}>Login with google</Button>
+        <Paper sx={{ margin:'5%'}}></Paper>
+        <Button variant="contained"  sx={{width: "100%"}}>Log in with metamask</Button>
+        </Box>
+        </Paper>
       </CardActions>
     </Card>
-    </Paper>
+
   );
 }
