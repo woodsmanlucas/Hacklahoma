@@ -1,14 +1,20 @@
-
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter,
+  Route
+} from "react-router-dom";
 import Chatpage from './Pages/Chatpage';
+import Homepage from './Pages/Homepage';
 
 function App() {
 
   return (
-    <div className="App">
-      <Chatpage />
-    </div>
+<BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Homepage />} />
+    <Route path="/chat/:id" element={<Chatpage/>} />
+    </Routes>
+</BrowserRouter>
   );
 }
 
