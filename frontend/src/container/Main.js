@@ -21,6 +21,7 @@ export default function Main() {
                 <Route path="solar" element={<Solar />} />
                 <Route path="shuttle" element={<Shuttle />} />
                 <Route path="mars" element={<Mars />} />
+                <Route path="/chat/:id" element={<Chatpage />} />
             </Routes>
         </BrowserRouter>
     )

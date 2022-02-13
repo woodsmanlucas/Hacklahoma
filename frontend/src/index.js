@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {MoralisProvider} from 'react-moralis';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const appId = "BnKmYCAdVmIeoC5yHzQPVuMhclLm6dur2IHAf0gR"
 const serverUrl = "https://ausaqbkjhg8v.usemoralis.com:2053/server"

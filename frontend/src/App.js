@@ -10,7 +10,6 @@ import { Paper } from '@mui/material';
 import Main from './container/Main'
 import Homepage from './Pages/Homepage';
 import Welcome from './Pages/WelcomePage';
-import { auth } from './services/firebase.js'
 // import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from './services/firebase.js'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -49,7 +48,7 @@ export default function App() {
                                 <Button variant="contained" color="success" sx={{ width: "100%" }} onClick={signInWithGoogle}>Login with google</Button>
                                 <Paper sx={{ margin: '5%' }}></Paper>
                             </Box>
-                            <Button variant="contained" sx={{ width: "100%" }} onClick={() => authenticate()} >Log in with metamask</Button>
+                            <Button variant="contained" sx={{ width: "100%" }}  >Log in with metamask</Button>
                         </Paper>
                     </CardActions>
                 </div>

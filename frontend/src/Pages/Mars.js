@@ -1,5 +1,6 @@
 import React, { Suspense, useRef, useState } from "react"
 import { Link } from "react-router-dom"
+import {Box} from "@mui/material"
 import { Canvas } from "@react-three/fiber"
 import { ContactShadows, Environment, useGLTF, OrbitControls, useAnimations } from "@react-three/drei"
 import { proxy, useSnapshot } from "valtio"
@@ -51,8 +52,10 @@ export default function SpaceShuttle() {
   return (
     <div className="model">
 
+      <Box sx={{display: "flex", justifyContent: "space-between"}}>
       <Link to="/Welcome" className="model_goback">Go Back</Link>
-
+      <Link to="/chat/Shuttle" className="model_goback">Enter the chat</Link>
+      </Box>
       <div className="model_info">
         <h1 className="model_info_title">
           Mars
