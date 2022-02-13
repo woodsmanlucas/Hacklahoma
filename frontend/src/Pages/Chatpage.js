@@ -31,10 +31,10 @@ export default function Chatpage() {
     }
 
   return (
-    <Container sx={{display: "flex", flexDirection: "column", flexWrap: "nowrap", height: "100%"}}>
+    <Container maxWidth="sm" sx={{display: "flex", flexDirection: "column", flexWrap: "nowrap", height: "100%"}}>
             <Paper sx={{height: "90vh" }}>{messages.map((msg) => (UserId == msg.user) ? 
-                    <Box sx={{backgroundColor: "tomato", overflowWrap: "break-word", width: "max-content", height: "20px", p: "5px", borderRadius: "5px"}} key={msg.id}>{msg.msg}</Box> : 
-                    <Box sx={{backgroundColor: "olivedrab",overflowWrap: "break-word", width: "max-content", height: "20px", p: "5px", borderRadius: "5px", ml: "auto"}} key={msg.id}>{msg.msg}</Box>)}
+                    <Box sx={{color: "white", backgroundColor: "tomato", overflowWrap: "break-word", width: "max-content", height: "20px", p: "5px", borderRadius: "5px"}} key={msg.id}>{msg.msg}</Box> : 
+                    <Box sx={{color: "white", backgroundColor: "olivedrab",overflowWrap: "break-word", width: "max-content", height: "20px", p: "5px", borderRadius: "5px", ml: "auto"}} key={msg.id}>{msg.msg}</Box>)}
             </Paper>
             <Paper sx={{display: "flex", flexDirection: "row"}} onSubmit={handleSubmit}>
             <TextField sx={{width: "80%"}} id="outlined-basic" label="Enter a message" variant="outlined" type="text" value={message} onChange={handleChange} />
