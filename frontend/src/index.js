@@ -1,13 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {render} from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import {
+BrowserRouter,
+Routes,
+Route
+} from "react-router-dom";
+import Chatpage from './Pages/Chatpage';
+import Homepage from './Pages/Homepage';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+render(
+  <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Homepage />} />
+    <Route path="chat" element={<Chatpage/>} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

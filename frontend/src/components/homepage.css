@@ -1,0 +1,6 @@
+img {
+    width: 40vw;
+    object-fit: contain;
+    margin:0 auto;
+    z-index: 0;
+}
