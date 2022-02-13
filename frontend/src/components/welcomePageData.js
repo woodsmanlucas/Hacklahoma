@@ -4,7 +4,7 @@ import Mars from "../Images/Mars.png"
 
 export default function welcomePageData ()
  {return [
-     {image: Solar, title: "The Solar System", link:"/solar"},
-     {image: Shuttle, title: "The Space Shuttle", link:"/shuttle"},
-     {image: Mars, title: "Mars", link:"/mars"}
+     {image: Solar, title: "The Solar System", link:"/info/solar"},
+     {image: Shuttle, title: "The Space Shuttle", link:"/info/shuttle"},
+     {image: Mars, title: "Mars", link:"/info/mars"}
 ]};
