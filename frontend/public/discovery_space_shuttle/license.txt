@@ -1,0 +1,11 @@
+Model Information:
+* title:	Discovery Space Shuttle
+* source:	https://sketchfab.com/3d-models/discovery-space-shuttle-23c579b845e841c9b6c6d59bd5725bb6
+* author:	rsatenza (https://sketchfab.com/rsatenza)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Discovery Space Shuttle" (https://sketchfab.com/3d-models/discovery-space-shuttle-23c579b845e841c9b6c6d59bd5725bb6) by rsatenza (https://sketchfab.com/rsatenza) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
