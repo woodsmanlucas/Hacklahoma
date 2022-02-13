@@ -1,23 +1,18 @@
-import {render} from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {MoralisProvider} from 'react-moralis';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {
-BrowserRouter,
-Routes,
-Route
-} from "react-router-dom";
-import Chatpage from './Pages/Chatpage';
-import Homepage from './Pages/Homepage';
-import Welcome from './Pages/WelcomePage'
 
+const appId = "BnKmYCAdVmIeoC5yHzQPVuMhclLm6dur2IHAf0gR"
+const serverUrl = "https://ausaqbkjhg8v.usemoralis.com:2053/server"
 
-render(
-  <BrowserRouter>
-    <Routes>
-    <Route path="/" element={<Homepage />} />
-    <Route path="chat" element={<Chatpage/>} />
-    <Route path="welcome" element={<Welcome />} />
-    </Routes>
-  </BrowserRouter>,
+ReactDOM.render(
+  <React.StrictMode>
+    <MoralisProvider appId={appId} serverUrl={serverUrl}>
+      <App />
+    </MoralisProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
