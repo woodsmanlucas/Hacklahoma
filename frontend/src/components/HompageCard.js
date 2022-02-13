@@ -6,9 +6,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Paper } from '@mui/material';
-
-
-
+import Solar from "../Images/Solar.jpg"
+import "./homepage.css"
 
 
 const bull = (
@@ -20,11 +19,13 @@ const bull = (
   </Box>
 );
 
-export default function BasicCard() {
+export default function HomepageCard() {
   return (
     
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
+        <Paper sx={{display: "flex"}}>
+        <Paper>
         <Typography variant="h5" component="div" color="text.secondary" gutterBottom>
           Hacklahoma Team
         </Typography>
@@ -40,17 +41,19 @@ export default function BasicCard() {
         Ea eum luptatum adolescens. Eu eos duis tota volumus, no qui doming virtute 
         </Paper>
         </Typography>
-
+        </Paper>
+        <img src={Solar} alt="Solar system" />
+        </Paper>
  
       </CardContent>
 
       <CardActions>
-        <Paper sx={{display:'flex', flexDirection:'column', marginTop:'30%', position: 'relative', left: '40%', }}>
+        <Paper sx={{display:'flex', flexDirection:'column', marginTop:'30%', position: 'relative', mx: "auto" }}>
         
         <Box component="span" sx={{ p: 7, border: '5px grey' }}>
-        <Button variant="contained" color="success" sx={{width: "100%"}}>Login with google</Button>
+        <Button variant="contained" color="success" sx={{width: "100%"}} href="/Welcome">Login with google</Button>
         <Paper sx={{ margin:'5%'}}></Paper>
-        <Button variant="contained"  sx={{width: "100%"}}>Log in with metamask</Button>
+        <Button variant="contained"  sx={{width: "100%"}} href="/Welcome">Log in with metamask</Button>
         </Box>
         </Paper>
       </CardActions>
