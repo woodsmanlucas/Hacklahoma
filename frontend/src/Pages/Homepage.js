@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 import HomepageCard from '../components/HompageCard';
+import MobileCard from '../components/MobileCard';
 import { Container, Paper } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
-import MobileCard from '../components/MobileCard';
+
 //import HompageContainer from '../components/HompageContainer';
 
 const Hompageview = () =>{
@@ -23,7 +24,6 @@ export default function Homepage() {
         <Container>
         <Paper sx={{marginTop:'5%'}}>
         <Hompageview />
-        
         </Paper>  
         </Container>
     </div>

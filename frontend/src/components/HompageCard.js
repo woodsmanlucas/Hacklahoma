@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Paper } from '@mui/material';
 import Solar from "../Images/Solar.jpg"
-import "./homepage.css"
+
 
 
 
